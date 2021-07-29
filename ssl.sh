@@ -1,5 +1,5 @@
 #!/bin/bash
-usage="Usage: `basename $0` (init|renew|getcert|getkey) domain_name"
+usage="Usage: `basename $0` (init|renew|getcert|getkey|setcron) domain_name"
 command=$1
 domain=$2
 filetemp="/etc/nginx/ssl/temp"
