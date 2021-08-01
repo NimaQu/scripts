@@ -19,7 +19,7 @@ else
 	mv $filetemp/$domain.key $sslloc
 	echo "result:"
 	ls $sslloc/$domain*
-	(crontab -l; echo "0 0 */1 * * $basepath/ssl.sh renew $domain > /dev/null")|awk '!x[$0]++'|crontab -
+	(crontab -l; echo "0 0 * * * $basepath/ssl.sh renew $domain > /dev/null")|awk '!x[$0]++'|crontab -
 fi
 }
 
@@ -55,7 +55,7 @@ function setcron() {
 if [ ! -n "$domain" ] ;then
     echo "Please input domain name"
 else
-	(crontab -l; echo "0 0 */1 * * $basepath/ssl.sh renew $domain > /dev/null")|awk '!x[$0]++'|crontab -
+	(crontab -l; echo "0 0 * * * $basepath/ssl.sh renew $domain > /dev/null")|awk '!x[$0]++'|crontab -
 fi
 }
 
